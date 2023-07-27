@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+    
+        <title>Horse breeds</title>
+        <link rel="stylesheet" href="style.css"> 
+        <meta charset="UTF-8">
+     <meta name="description" content="Horse photo app"> 
+     <meta author="Abdul Badawi">
+     <meta keywords="horses, pets">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     </head>
+     <body>
+        <div id="mainBody">
+        <header> 
+
+        <nav> 
+            <ul>
+                <li> <a href="index.html" target="_blank">Home</a> </li>
+                <li><a href ="firstlook.html" id="active" target="_blank">Photo App</a> </li>
+                <li> <a href="gallery.html" target="_blank">Gallery</a> </li>
+                <li> <a href ="quiz.html" target="_blank">Quiz</a></li>
+            </ul>
+        </nav>
+
+        <h1>Racehorses
+        </h1>
+        <p>Welcome to my Horse racing page! Here you can learn new interesting facts about various breeds of Horse, along with an insight into Horse racing.</p>
+<img src="hpics/hsketch.jpg" alt="Horse sketch side view.">
+</header>
+        <h3> Facts about Horses 
+        </h3>
+        <div id="factBox"> 
+        <p> Here are some interesting facts about Horses:</p>
+        <ul>
+            <li>Obligate nasal breathers - horses are unable to breathe through their mouthes. 
+            </li>
+            <li> You can estimate a Horses age by inspecting their teeth.</li>
+            <li> Horses are able to sleep standing up, although they do need to lie down to achieve a full cycle of sleep.</li>
+        </ul>
+       </div>
+       <br>
+        <p>The most common breeds in the UK are:</p>
+        <ol> 
+            <li>
+        
+           
+           
+               Thouroughbreds
+            - Popularly trained for horse racing, this breed is characterised for their speed, strength and athleticism. 
+            <br>
+             <img src="hpics/Herd-life.jpg" style="width:300px;height:auto" alt="Thoroughbred herd.">
+              
+        </li>
+           <li> Arabian horse
+            - Regarded as one of the oldest breeds in history, these animals originated in the Arabian peninsula. </li>
+            <br>
+            <img src="hpics/Arabh.jpg" style="width:300px;height:auto" alt="Thoroughbred herd.">
+             
+            <li>Mustang 
+            - Free roaming wild horse originating in North america. Known traits are their speed, adaptibility, long distances. </li>
+         <br>
+         <img src="hpics/Arabh.jpg" style="width:300px;height:auto" alt="Thoroughbred herd.">
+
+        </ol>
+        
+        <p> For more info on Horses, visit <a href="https://en.wikipedia.org/wiki/Cat" target="_blank">here</a> </p>
+        <h2>Submit your favourite Horse pictures here</h2>
+        <main>
+        <form name="app">
+            <fieldset>
+                <legend>
+                    What gender is this Horse?
+                </legend>
+                <input id="Male"type= "radio" name="gender" value="Male">
+                <label for="Male">  Male</label>
+                <br> 
+                <input id="Female"type= "radio" name="gender" value="Female">
+                <label for="Female">  Female</label> 
+                <br>
+                <input id="Other"type= "radio" name="gender" value="Other">
+                <label for="Other">  Other</label>
+            </fieldset>
+            <fieldset> 
+            <legend> What is your Horse's personality?</legend>
+            <input id="Hangry" type="Checkbox" name="personality" value="Hangry" >
+            <label for="Hangry"> Hangry</label> 
+            <br>
+            <input id="Lazy" type="Checkbox" name="personality" value="Lazy" >
+            <label for="Lazy"> Lazy</label> <br>
+            <input id="Adventorous" type="Checkbox" name="personality" value="Adventorous" >
+            <label for="Adventorous"> Adventorous</label> 
+            </fieldset>
+         <label for="url"> Enter your photo URL</label>
+         <input id="URL" type="text" name="photourl">
+         <input type="button" value="Submit"
+         onclick="saveFile()">
+         </form>
+        </main>
+        <footer>
+            <p>Copyright Abdul Badawi 2023</p>
+        </footer>
+</div>
+    </body>
+</html>
+
+<script>
+    let saveFile = () => {
+        form = document.forms.app.elements;
+        const gender = form.gender.value;
+        const personality = form.personality.value;
+        const link = form.photourl.value;
+
+        // This variable stores all the data.
+        let data = 
+            '\r Gender?: ' + gender + ' \r\n ' + 
+            'Personality: ' + personality + ' \r\n ' + 
+            'Link: ' + link 
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = "filename";	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+        newLink.innerHTML = "Download File:";
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>

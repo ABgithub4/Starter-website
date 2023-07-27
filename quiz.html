@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+
+        <nav> 
+            <ul>
+                <li> <a href="index.html" target="_blank">Home</a> </li>
+                <li><a href ="firstlook.html" target="_blank">Photo App</a> </li>
+                <li> <a href="gallery.html" target="_blank">Gallery</a> </li>
+                <li> <a href ="quiz.html" id="active" target="_blank">Quiz</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    
+<p>This quiz will tell you all about</p>
+<div id="quiz"> 
+<h2>The quiz</h2>
+<form name="Quiz">
+    <label for="name"> Enter your name</label>
+         <input id="name" type="text" name="name">
+         <br><br>
+         <fieldset>
+            <legend>
+                What colour is your Horse?
+            </legend>
+            <input id="White"type= "radio" name="Colour" value="White">
+            <label for="White">  White</label>
+            <br> 
+            <input id="Black"type= "radio" name="Colour" value="Black">
+            <label for="Black">  Black</label> 
+            <br>
+            <input id="mixed"type= "radio" name="Colour" value="mixed">
+            <label for="mixed">  Other</label>
+            <br>
+            <legend>
+                What pattern is your Horse?
+            </legend>
+            <input id="striped"type= "radio" name="pattern" value="striped">
+            <label for="striped">  Striped</label>
+            <br> 
+            <input id="spotted"type= "radio" name="pattern" value="spotted">
+            <label for="spotted">  Spotted</label> 
+            <br>
+            <input id="bald"type= "radio" name="pattern" value="bald">
+            <label for="bald">  Bald</label>
+
+        </fieldset>
+</form>
+
+</div>
+<br>
+ <button type="button" onclick="checkAnswers();">Submit</button>
+
+</body>
