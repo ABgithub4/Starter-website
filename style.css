@@ -9,11 +9,7 @@ body {
 img{ max-width:100%;
     height:auto;
 }
-image{
-   padding:10px;
-   margin:20px;
-   background-color:bisque;
-}
+
 .flex-container {
  background-color: antiquewhite;
  display: flex;
